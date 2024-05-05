@@ -26,6 +26,38 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+h1 {
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+p {
+  @apply text-xl;
+}
+
+a {
+  @apply border-2 border-[rgb(var(--foreground-rgb))] p-4;
+}
+
+br {
+  @apply block my-4;
+}
+
+.mono {
+  @apply font-mono;
+}
+
+.pre-wrap {
+  white-space: pre-wrap; /* CSS property to preserve whitespace and wrap text */
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
