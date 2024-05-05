@@ -130,7 +130,7 @@ export default function Home() {
             />
             <br />
             <textarea
-              className="w-full h-48 p-4 bg-gray-900 border border-gray-700 rounded-sm mt-4"
+              className="w-full h-48 p-4 bg-gray-900 border border-gray-700 rounded-sm mt-4 text-white"
               placeholder="Note"
               name="content"
               value={content}
