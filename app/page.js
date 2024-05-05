@@ -75,9 +75,12 @@ export default function Home() {
     <suppressHydrationWarning>
       {!addingNote && (
         <suppressHydrationWarning>
-          <a onClick={saveNoteToggle} className="cursor-pointer">
+          <button
+            onClick={saveNoteToggle}
+            className="cursor-pointer border-2 border-[rgb(var(--foreground-rgb))] p-4"
+          >
             New Note
-          </a>
+          </button>
           <br />
           <br />
           <br />
@@ -112,9 +115,12 @@ export default function Home() {
 
       {addingNote && (
         <suppressHydrationWarning>
-          <a onClick={saveNoteToggle} className="cursor-pointer">
+          <button
+            onClick={saveNoteToggle}
+            className="cursor-pointer border-2 border-[rgb(var(--foreground-rgb))] p-4"
+          >
             Back
-          </a>
+          </button>
           <br />
           <br />
           <br />
