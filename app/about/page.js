@@ -17,12 +17,17 @@ const About = (props) => {
       <br />
       <h1 className="font-mono mb-4">About this app</h1>
       <ul>
+        <li>This is a simple note-taking app.</li>
         <li>
-          This is a simple note-taking app.
-          <li>
-            It does not send information over the internet. You can use it with
-            airplane mode on th1plaines{" "}
-          </li>
+          It does not send information over the internet. You can use it with
+          airplane mode on.
+        </li>
+        <li>You can easily add, edit, and delete notes.</li>
+        <li>The app is designed to be simple and intuitive to use.</li>
+        <li>It&#39;s a great tool for organizing your thoughts and ideas.</li>
+        <li>
+          You can use it on any device, as it&#39;s responsive and works on all
+          screen sizes.
         </li>
       </ul>
     </div>
