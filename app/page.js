@@ -89,7 +89,7 @@ export default function Home() {
           {notes.map((note, index) => (
             <div
               key={index}
-              className="mt-4 pt-4 border-t border-gray-200 grid grid-cols-[1fr,120px] gap-2 items-start"
+              className="mt-4 pt-4 border-t border-gray-200 grid grid-cols-[1fr,120px] gap-4 items-start"
             >
               <div>
                 <p className="font-semibold">{note.title}</p>
@@ -98,15 +98,15 @@ export default function Home() {
               <div className="flex justify-end items-center">
                 <button
                   onClick={() => editNote(index)}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 max-h-10 overflow-hidden"
                 >
                   Edit
                 </button>
                 <button
                   onClick={() => deleteNote(index)}
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded max-h-10 overflow-hidden relative top-[-1px]"
                 >
-                  x
+                  X
                 </button>
               </div>
             </div>
