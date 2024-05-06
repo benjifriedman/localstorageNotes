@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [addingNote, setAddingNote] = useState(false);
@@ -82,19 +83,19 @@ export default function Home() {
             New Note
           </button>
           <br />
-          <br />
+
           <br />
           <h1 className="font-mono">Notes</h1>
           {notes.map((note, index) => (
             <div
               key={index}
-              className="mt-4 pt-4 border-t border-gray-200 flex justify-between items-start"
+              className="mt-4 pt-4 border-t border-gray-200 grid grid-cols-[1fr,120px] gap-2 items-start"
             >
               <div>
                 <p className="font-semibold">{note.title}</p>
                 <p className="pre-wrap">{note.content}</p>
               </div>
-              <div>
+              <div className="flex justify-end items-center">
                 <button
                   onClick={() => editNote(index)}
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2"
@@ -121,7 +122,6 @@ export default function Home() {
           >
             Back
           </button>
-          <br />
           <br />
           <br />
           <h1 className="font-mono">New Note</h1>
@@ -152,6 +152,13 @@ export default function Home() {
           </form>
         </suppressHydrationWarning>
       )}
+
+      <br />
+      <br />
+
+      <p>
+        <Link href="/about">Info</Link>
+      </p>
     </suppressHydrationWarning>
   );
 }

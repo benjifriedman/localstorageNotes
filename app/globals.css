@@ -48,7 +48,7 @@ a {
 }
 
 br {
-  @apply block my-4;
+  @apply block my-32;
 }
 
 .mono {
