@@ -29,6 +29,11 @@ const About = (props) => {
           You can use it on any device, as it&#39;s responsive and works on all
           screen sizes.
         </li>
+        <li>You can use just tab and enter to navigate around using the app</li>
+        <li>
+          The app is built with Next.js, a React framework, and Tailwind CSS, a
+          utility-first CSS framework.
+        </li>
       </ul>
     </div>
   );

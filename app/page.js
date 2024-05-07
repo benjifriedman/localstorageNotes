@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import ListNotes from "./(components)/ListNotes";
+import AddNoteForm from "./(components)/AddNoteForm";
 
 export default function Home() {
   const [addingNote, setAddingNote] = useState(false);
@@ -75,90 +77,24 @@ export default function Home() {
   return (
     <suppressHydrationWarning>
       {!addingNote && (
-        <suppressHydrationWarning>
-          <button
-            onClick={saveNoteToggle}
-            className="cursor-pointer border-2 border-[rgb(var(--foreground-rgb))] p-4"
-          >
-            New Note
-          </button>
-          <br />
-
-          <br />
-          <h1 className="font-mono">Notes</h1>
-          {notes.map((note, index) => (
-            <div
-              key={index}
-              className="mt-4 pt-4 border-t border-gray-200 grid grid-cols-[1fr,120px] gap-4 items-start"
-            >
-              <div>
-                <p className="font-semibold">{note.title}</p>
-                <p className="pre-wrap">{note.content}</p>
-              </div>
-              <div className="flex justify-end items-center">
-                <button
-                  onClick={() => editNote(index)}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-2 max-h-10 overflow-hidden"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => deleteNote(index)}
-                  className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded max-h-10 overflow-hidden relative top-[-1px]"
-                >
-                  X
-                </button>
-              </div>
-            </div>
-          ))}
-        </suppressHydrationWarning>
+        <ListNotes
+          saveNoteToggle={saveNoteToggle}
+          notes={notes}
+          editNote={editNote}
+          deleteNote={deleteNote}
+        />
       )}
 
       {addingNote && (
-        <suppressHydrationWarning>
-          <button
-            onClick={saveNoteToggle}
-            className="cursor-pointer border-2 border-[rgb(var(--foreground-rgb))] p-4"
-          >
-            Back
-          </button>
-          <br />
-          <br />
-          <h1 className="font-mono">New Note</h1>
-          <form onSubmit={handleNewNoteSubmit}>
-            <input
-              type="text"
-              className="w-full p-4 bg-gray-900 border border-gray-700 rounded-sm mt-4"
-              placeholder="Title"
-              name="title"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-            <br />
-            <textarea
-              className="w-full h-48 p-4 bg-gray-900 border border-gray-700 rounded-sm mt-4 text-white"
-              placeholder="Note"
-              name="content"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-            />
-            <br />
-            <button
-              type="submit"
-              className="mt-4 p-3 bg-blue-600 hover:bg-blue-700 text-white rounded"
-            >
-              Save
-            </button>
-          </form>
-        </suppressHydrationWarning>
+        <AddNoteForm
+          saveNoteToggle={saveNoteToggle}
+          handleNewNoteSubmit={handleNewNoteSubmit}
+          setTitle={setTitle}
+          setContent={setContent}
+          title={title}
+          content={content}
+        />
       )}
-
-      <br />
-      <br />
-
-      <p>
-        <Link href="/about">Info</Link>
-      </p>
     </suppressHydrationWarning>
   );
 }
