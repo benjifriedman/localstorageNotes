@@ -1,3 +1,5 @@
+# localstorageNotes
+
 Simple straightforward notetaking app that uses localstorage to save notes. 
 
 Uses Next.js with Tailwind. No login.
