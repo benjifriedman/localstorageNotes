@@ -12,7 +12,7 @@ const AddNoteForm = (props) => {
       <br />
       <br />
       <h1 className="font-mono">New Note</h1>
-      <form onSubmit={props.handleNewNoteSubmit}>
+      <form onSubmit={props.handleNewNoteSubmit} className="w-full max-w-2xl">
         <input
           type="text"
           className="w-full p-4 bg-gray-900 border border-gray-700 rounded-sm mt-4"
